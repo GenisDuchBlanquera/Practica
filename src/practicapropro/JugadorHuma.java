@@ -9,6 +9,7 @@ package practicapropro;
  *
  * @author genis
  */
-public class JugadorHuma {
+public class JugadorHuma extends Jugador{
+    
     
 }
