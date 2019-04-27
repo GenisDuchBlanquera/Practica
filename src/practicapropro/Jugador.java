@@ -13,11 +13,12 @@ public class Jugador {
     
     private int nJugador;
     private String color;
-    private rajola r;
+    private Rajola r;
     private Posicio p;
-    private regio r;
+    private Regio re;
     private int punts;
     private int nSeguidors;
+    
     Jugador (){
         color = "";
         punts = 0;
@@ -28,10 +29,16 @@ public class Jugador {
     Posicio colocarRajola(){
             return p;
     }
+    Posicio posicio(){
+            return p;
+    }
 //Pre:Seguidor existent
 //Post:Col·locarà el seguidor que vol colocar al taulell.
-    regio colocarSeguidor(){
-        return r;
+    Regio colocarSeguidor(){
+        return re;
+    }
+    Regio regio(){
+        return re;
     }
 //Pre:--
 //Post:Suma x a la puntuació del jugador.

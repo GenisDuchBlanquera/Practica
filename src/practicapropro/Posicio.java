@@ -5,6 +5,8 @@
  */
 package practicapropro;
 
+import java.util.Scanner;
+
 /**
  *
  * @author genis
@@ -24,5 +26,11 @@ public class Posicio {
     }
     Boolean esIgual (int x, int y){
         return this.x == x && this.y == y;
+    }
+    
+    void llegirPosicio () {
+        Scanner sc = new Scanner(System.in);
+        x = sc.nextInt();
+        y = sc.nextInt();
     }
 }
