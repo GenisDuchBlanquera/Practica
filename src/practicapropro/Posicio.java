@@ -33,4 +33,11 @@ public class Posicio {
         x = sc.nextInt();
         y = sc.nextInt();
     }
+    
+    int getX(){
+        return x;
+    }
+    int getY(){
+        return y;
+    }
 }
