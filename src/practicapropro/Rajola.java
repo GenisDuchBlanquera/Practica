@@ -56,7 +56,10 @@ public class Rajola {
    
    public void posicio(int x, int y){
        
+       
+       
    }
+   
    public void afegirSeguidor(){
        
    }
