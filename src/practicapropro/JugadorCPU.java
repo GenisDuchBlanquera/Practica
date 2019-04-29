@@ -9,6 +9,6 @@ package practicapropro;
  *
  * @author genis
  */
-public class JugadorCPU {
+public class JugadorCPU extends Jugador{
     
 }

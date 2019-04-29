@@ -50,5 +50,9 @@ public class Jugador {
     void sumarSeguidor(){
         nSeguidors++;
     }
+    
+    void assignarColor (String s){
+        color = s;
+    }
 
 }
