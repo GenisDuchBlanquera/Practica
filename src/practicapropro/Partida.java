@@ -111,6 +111,7 @@ public class Partida {
                 }
             }
         }
+        
         t.afegirRajola(rajola,p);
         
         if (llistaJugadorsHuma.get(tornJugador).triarRegio() != "N"){
