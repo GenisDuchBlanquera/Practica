@@ -5,6 +5,8 @@
  */
 package practicapropro;
 
+import java.util.Scanner;
+
 /**
  *
  * @author genis
@@ -25,7 +27,7 @@ public class Jugador {
         nSeguidors = 0;
     }
     //Pre:Rajola existent
-//Post:Col·locarà la rajola que vol colocar al taulell
+    //Post:Col·locarà la rajola que vol colocar al taulell
     Posicio colocarRajola(){
             return p;
     }
@@ -37,8 +39,12 @@ public class Jugador {
     Regio colocarSeguidor(){
         return re;
     }
-    Regio regio(){
-        return re;
+    String llegirRegio(){
+        Scanner sc = new Scanner(System.in);
+        String reg = sc.next();
+        if (reg != "N")
+        re.tipusRegio(reg.charAt(0));
+        return reg;
     }
 //Pre:--
 //Post:Suma x a la puntuació del jugador.

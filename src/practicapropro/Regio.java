@@ -23,9 +23,6 @@ public class Regio {
     void tipusRegio (String s){
         tipus = s;
     }
-    
-    void llegirRegio (){
-        
-    }
+
     
 }

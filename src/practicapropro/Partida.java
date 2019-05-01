@@ -15,18 +15,22 @@ import java.util.*;
  * @author genis
  */
 public class Partida {
+
     int numJugadors;
     int tornJugador;
-    ArrayList<Jugador> llistaJugadors = new ArrayList<Jugador>();
-    ArrayList<Integer> jugadorsCpu = new ArrayList<Integer>();
-    
-    void iniciarPartida () throws FileNotFoundException{
-        
+    PilaRajoles pr;
+    Rajola rajola;
+    ArrayList<JugadorHuma> llistaJugadorsHuma = new ArrayList<JugadorHuma>();
+    ArrayList<JugadorCPU> jugadorsCpu = new ArrayList<JugadorCPU>();
+    ArrayList<Integer> posicioCPU = new ArrayList<Integer>();
+    Tauler t;
+
+    void iniciarPartida() throws FileNotFoundException {
+
         System.out.println("Benvingut al joc del Carcassone");
-       
+
         File f = new File("prova1.txt");
-        PilaRajoles pr;
-        
+
         Scanner s = new Scanner(f);
         pr = new PilaRajoles();
         //llegir nombre_jugadors
@@ -35,54 +39,84 @@ public class Partida {
         System.out.println("Nombre jugadors " + numJugadors);
         //llegir jugadors cpu
         s.next();
-        int p=s.nextInt();
-        jugadorsCpu.add(p);
-        p=s.nextInt();
-        jugadorsCpu.add(p);
-        p=s.nextInt();
-        jugadorsCpu.add(p);
-        System.out.println("JugadorsCPU " +jugadorsCpu.get(0)+" "+jugadorsCpu.get(1)+" "+jugadorsCpu.get(2));
+        int p = s.nextInt();
+        posicioCPU.add(p);
+        p = s.nextInt();
+        posicioCPU.add(p);
+        p = s.nextInt();
+        posicioCPU.add(p);
+        System.out.println("JugadorsCPU " + posicioCPU.get(0) + " " + posicioCPU.get(1) + " " + posicioCPU.get(2));
         //llegir paraula rajoles
         s.next();
-        while(s.hasNext()) {
-            String tipus=s.next();
-            Rajola j= new Rajola(tipus);
-            int n=s.nextInt();
-            System.out.println(tipus + " " +n);
-            int aux=0;
-            while(aux<n){
-                
+        while (s.hasNext()) {
+            String tipus = s.next();
+            Rajola j = new Rajola(tipus);
+            int n = s.nextInt();
+            System.out.println(tipus + " " + n);
+            int aux = 0;
+            while (aux < n) {
+
                 pr.afegir(j);
                 aux++;
-                
+
             }
-            
+
         }
         System.out.println(pr.mida());
 
     }
-    
+
     void passarTorn() {
-    
+
     }
-    
-    void sumarPuntsCamps (){
-        
+
+    void sumarPuntsCamps() {
+
     }
-    void retornarSeguidors (Regio r){
-        
+
+    void retornarSeguidors(Regio r) {
+
     }
-    
+
     private void actualitzarTauler() {
-        
+
     }
-    
-    private void sumarPuntsCiutat(){
-        
+
+    private void sumarPuntsCiutat() {
+
     }
-    private void sumarPuntsMonestir(){
-        
+
+    private void sumarPuntsMonestir() {
+
     }
-    
-    
+
+    void tornJugadorHuma() {
+        Posicio p = new Posicio();
+        Boolean girar = true;
+        p = llistaJugadorsHuma.get(tornJugador).triarPosicioRajola();
+        while (girar) {
+            if (llistaJugadorsHuma.get(tornJugador).girarRajola()) {
+                rajola.girar();
+            } else {
+                girar = false;
+            }
+        }
+        while (!t.comp(p)) {
+            p = llistaJugadorsHuma.get(tornJugador).triarPosicioRajola();
+            while (girar) {
+                if (llistaJugadorsHuma.get(tornJugador).girarRajola()) {
+                    rajola.girar();
+                } else {
+                    girar = false;
+                }
+            }
+        }
+        t.afegirRajola(rajola,p);
+        
+        if (llistaJugadorsHuma.get(tornJugador).triarRegio() != "N"){
+            rajola.afegirSeguidor();
+        }
+        
+
+    }
 }
