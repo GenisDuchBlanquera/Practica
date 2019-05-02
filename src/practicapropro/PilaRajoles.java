@@ -5,6 +5,7 @@
  */
 package practicapropro;
 import java.util.LinkedList;
+import java.util.Random;
 
 
 /**
@@ -14,34 +15,18 @@ import java.util.LinkedList;
 public class PilaRajoles {
     
     
-    private final LinkedList cua;
+    private final LinkedList<Rajola> cua;
 
     
     public PilaRajoles() {
-        this.cua= new LinkedList();
+        cua= new LinkedList<>();
+       
+        
     }
     
-    public void afegir (Object r){
+    public void afegir (Rajola r){
         
         this.cua.add(r);
-    }
-    
-    public Object consultar(){
-        
-       return this.cua.peek();
-    }
-    
-    public void eliminar(){
-        this.cua.remove();
-    }
-    
-    
-    public void mostrar(){
-        
-        for(int i=0;i<cua.size();i++){
-            System.out.print(cua.get(i));
-        }
-        
     }
     
     public int mida(){
@@ -49,6 +34,20 @@ public class PilaRajoles {
         return cua.size();
     }
     
-       
     
+    public Rajola agafarRajola(){
+        
+        Rajola j=new Rajola();
+        
+        Random r = new Random();
+        int valor = r.nextInt(mida());
+        
+        j= cua.get(valor);
+        cua.remove(valor);
+        
+        return j;
+        
+    }
+    
+        
 }

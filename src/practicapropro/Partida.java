@@ -69,7 +69,7 @@ public class Partida {
     void passarTorn() {
 
     }
-
+    
     void sumarPuntsCamps() {
 
     }
