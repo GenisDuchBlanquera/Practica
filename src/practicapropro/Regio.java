@@ -10,23 +10,27 @@ package practicapropro;
  * @author genis
  */
 public class Regio {
-    private char tipus;
+    private String tipus;
     private Boolean seguidor;
     
     Regio () {
-        tipus = ' ';
+        tipus = " ";
         seguidor = false;
     }
     void afegirSeguidor (){
         seguidor = true;
     }
     void tipusRegio (String s){
-        tipus = s.charAt(0);
+        tipus = s;
     }
     
-    char obttipus(){
+    String obttipus(){
 
         return tipus;
     }
     
+    void dividir_cela_regio(String s){
+        tipus=tipus+s;
+}
+
 }
