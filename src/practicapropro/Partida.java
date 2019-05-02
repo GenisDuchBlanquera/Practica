@@ -115,9 +115,10 @@ public class Partida {
         t.afegirRajola(rajola,p);
         
         if (llistaJugadorsHuma.get(tornJugador).triarRegio() != "N"){
-            rajola.afegirSeguidor();
+            System.out.println("Tria a quina posicio vols posar el seguidor");
+            p.llegirPosicio();
+            rajola.afegirSeguidor(p.getX(),p.getY());
         }
         
-
     }
 }
