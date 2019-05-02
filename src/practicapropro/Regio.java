@@ -7,7 +7,7 @@ package practicapropro;
 
 /**
  *
- * @author genis
+ * @author adriafusterabassedas
  */
 public class Regio {
     private String tipus;
