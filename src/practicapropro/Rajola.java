@@ -168,6 +168,6 @@ public class Rajola {
        _regions[x][y].afegirSeguidor();
 
    }
-
-
-}
+   
+   
+ }

@@ -17,20 +17,30 @@ public class Regio {
         tipus = " ";
         seguidor = false;
     }
-    void afegirSeguidor (){
+    public void afegirSeguidor (){
         seguidor = true;
     }
-    void tipusRegio (String s){
+    public void tipusRegio (String s){
         tipus = s;
     }
     
-    String obttipus(){
+    public String obttipus(){
 
         return tipus;
     }
     
-    void dividir_cela_regio(String s){
+    public void dividir_cela_regio(String s){
         tipus=tipus+s;
 }
+    
+    public boolean comparar_Regio(Regio r){
+        
+        boolean p=false;
+        String aux=r.tipus;
+        if((tipus.equals(r.obttipus())) || (tipus.equals("F") && aux.equals("VF")) || (tipus.equals("V") && aux.equals("VF")))
+            p=true;
+      
+        return p;    
+    }
 
 }
