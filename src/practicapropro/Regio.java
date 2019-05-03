@@ -29,8 +29,8 @@ public class Regio {
         return tipus;
     }
     
-    public void dividir_cela_regio(String s){
-        tipus=tipus+s;
+    public void dividir_cela_regio(){
+        tipus="FV";
 }
     
     public boolean comparar_Regio(Regio r){

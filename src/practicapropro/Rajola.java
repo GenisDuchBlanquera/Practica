@@ -32,7 +32,7 @@ public class Rajola {
 
         _tipus=t;
         
-        if(t.equals("CFCVC")){
+        if(_tipus.equals("CFCVC")){
             for(int i=0;i<5;i++){
                 
                 Regio r= new Regio();
@@ -56,10 +56,13 @@ public class Rajola {
                 _regions[4][i]=r4;
  
                   
-            }     
+            }    
+            _regions[4][0].dividir_cela_regio();
+            _regions[4][4].dividir_cela_regio();
+            
         }
         
-        else if(t.equals("XCCCC")){
+        else if(_tipus.equals("XCCCC")){
             
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
@@ -77,11 +80,67 @@ public class Rajola {
             }
         
             _regions[2][2].tipusRegio("X");
-            
-            
-              
+                
         }
-        else if(t.equals("MFFFF")){
+        else if(_tipus.equals("CVFCC")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;
+                    
+                }
+            }
+            
+            
+            for(int y=0;y<4;y++){
+                _regions[0][y].tipusRegio("V");
+            }
+            
+            for(int z=0;z<3;z++){
+                _regions[2][z].tipusRegio("C");
+            }
+            for(int q=2;q<5;q++){
+                _regions[q][2].tipusRegio("C");
+            }
+            
+            _regions[0][0].dividir_cela_regio();
+            _regions[0][4].dividir_cela_regio();
+            
+            
+            
+        }
+        else if(_tipus.equals("XVCCC")){
+            
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;
+                    
+                }
+            }
+            
+            for(int y=0;y<5;y++){
+                _regions[2][y].tipusRegio("C");
+            }
+            _regions[3][2].tipusRegio("C");
+            _regions[4][2].tipusRegio("C");
+            
+            
+            for(int z=0;z<5;z++){
+                _regions[0][z].tipusRegio("V");
+            }
+            
+            _regions[0][0].dividir_cela_regio();
+            _regions[0][4].dividir_cela_regio();
+            
+            
+        }
+        
+               
+        
+        else if(_tipus.equals("MFFFF")){
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
                     
@@ -99,30 +158,28 @@ public class Rajola {
             
             
         }
-        else if(t.equals("VVFFV")){
+        else if(_tipus.equals("VVFFV")){
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
                     Regio r= new Regio();
-                    r.tipusRegio("V");
+                    r.tipusRegio("F");
                     _regions[i][j]=r;          
                 }
             }
             //aqui ja no cal anar creant les regions perque ja estan creades, nomes és modifiquen
-            for(int y=1;y<5;y++){
-                _regions[3][y].tipusRegio("F");
-                _regions[4][y].tipusRegio("F");
+            for(int y=0;y<5;y++){
+                _regions[0][y].tipusRegio("V");
+                _regions[y][0].tipusRegio("V");
             }
             
-            _regions[3][2].tipusRegio("F");
-            _regions[4][2].tipusRegio("F");
-            _regions[4][1].tipusRegio("F");
-            _regions[4][0].dividir_cela_regio("F");
-            _regions[1][4].dividir_cela_regio("F");
+            
+            _regions[4][0].dividir_cela_regio();
+            _regions[1][4].dividir_cela_regio();
             
             
             
         }
-        else if(t.equals("MFFCF")){
+        else if(_tipus.equals("MFFCF")){
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
                     Regio r= new Regio();
@@ -139,6 +196,31 @@ public class Rajola {
             _regions[4][2].tipusRegio("C");
             
         }
+        
+        else if(_tipus.equals("VVCCV")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;      
+                }
+            }
+            for(int y=0;y<5;y++){
+                _regions[y][0].tipusRegio("V");
+                _regions[0][y].tipusRegio("V");
+            }
+            
+            for(int z=2;z<5;z++){
+                _regions[z][0].tipusRegio("V");
+                _regions[0][z].tipusRegio("V");
+            }
+            
+            _regions[4][0].dividir_cela_regio();
+            _regions[1][4].dividir_cela_regio();
+            
+        }
+        
+        
     }
 
 
