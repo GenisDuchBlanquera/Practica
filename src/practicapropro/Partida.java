@@ -67,7 +67,7 @@ public class Partida {
     }
 
     void passarTorn() {
-
+        tornJugador++;
     }
     
     void sumarPuntsCamps() {
@@ -89,7 +89,9 @@ public class Partida {
     private void sumarPuntsMonestir() {
 
     }
-
+    public void jugar(){
+        
+    }
     void tornJugadorHuma() {
         Posicio p = new Posicio();
         Boolean girar = true;
@@ -101,7 +103,7 @@ public class Partida {
                 girar = false;
             }
         }
-        while (!t.comp(p)) {
+        while (true/*!t.comp(p)*/) {
             p = llistaJugadorsHuma.get(tornJugador).triarPosicioRajola();
             while (girar) {
                 if (llistaJugadorsHuma.get(tornJugador).girarRajola()) {
@@ -112,13 +114,13 @@ public class Partida {
             }
         }
         
-        t.afegirRajola(rajola,p);
+        //t.afegirRajola(rajola,p);
         
-        if (llistaJugadorsHuma.get(tornJugador).triarRegio() != "N"){
+        /*if (!llistaJugadorsHuma.get(tornJugador).triarRegio().equals("N")){
             System.out.println("Tria a quina posicio vols posar el seguidor");
             p.llegirPosicio();
             rajola.afegirSeguidor(p.getX(),p.getY());
-        }
+        }*/
         
     }
 }

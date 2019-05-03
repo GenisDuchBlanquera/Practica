@@ -11,54 +11,39 @@ import java.util.Scanner;
  *
  * @author genis
  */
-public class Jugador {
+public interface Jugador {
     
-    private int nJugador;
-    private String color;
-    private Rajola r;
-    private Posicio p;
-    private Regio re;
-    private int punts;
-    private int nSeguidors;
+
     
-    Jugador (){
-        color = "";
-        punts = 0;
-        nSeguidors = 0;
-    }
+
     //Pre:Rajola existent
     //Post:Col·locarà la rajola que vol colocar al taulell
-    Posicio colocarRajola(){
-            return p;
-    }
-    Posicio posicio(){
-            return p;
-    }
+    Posicio colocarRajola();
+
+    
+    Posicio posicio();
+
 //Pre:Seguidor existent
 //Post:Col·locarà el seguidor que vol colocar al taulell.
-    Regio colocarSeguidor(){
-        return re;
-    }
-    String llegirRegio(){
-        Scanner sc = new Scanner(System.in);
-        String reg = sc.next();
-        if (reg != "N")
-        re.tipusRegio(reg.charAt(0));
-        return reg;
-    }
+    Regio colocarSeguidor();
+
+    String llegirRegio();
+       
+    
 //Pre:--
 //Post:Suma x a la puntuació del jugador.
-    void sumarPunts(int x){
-        punts+=x;
-    }
+    void sumarPunts(int x);
 //Pre:--
 //Post:Afegeix el seguidor a la llista de seguidors.
-    void sumarSeguidor(){
-        nSeguidors++;
-    }
+    void sumarSeguidor();
     
-    void assignarColor (String s){
-        color = s;
-    }
+    void assignarColor (String s);
+    void numJugador(int n);
+    
+    void mostrar();
+    
+    Posicio triarPosicioRajola();
+    String triarRegio();
+    Boolean GirarRajola();
 
 }
