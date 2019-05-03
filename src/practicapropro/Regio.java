@@ -37,7 +37,7 @@ public class Regio {
         
         boolean p=false;
         String aux=r.tipus;
-        if((tipus.equals(r.obttipus())) || (tipus.equals("F") && aux.equals("VF")) || (tipus.equals("V") && aux.equals("VF")))
+        if((tipus.equals(r.obttipus())) || (tipus.equals("F") && aux.equals("FV")) || (tipus.equals("V") && aux.equals("FV")))
             p=true;
       
         return p;    
