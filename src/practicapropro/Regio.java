@@ -12,10 +12,12 @@ package practicapropro;
 public class Regio {
     private String tipus;
     private Boolean seguidor;
+    private Boolean bonificacio;
     
     Regio () {
         tipus = " ";
         seguidor = false;
+        bonificacio=false;
     }
     public void afegirSeguidor (){
         seguidor = true;
@@ -41,6 +43,11 @@ public class Regio {
             p=true;
       
         return p;    
+    }
+    
+    public void posar_bonificacio(){
+        
+        bonificacio=true;
     }
 
 }
