@@ -63,36 +63,30 @@ public class Rajola {
         }
         
         else if(_tipus.equals("XCCCC")){
-            
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
                     Regio r= new Regio();
                     r.tipusRegio("F");
                     _regions[i][j]=r;
-                    
                 }
             }
-            //aqui ja no cal anar creant les regions perque ja estan creades, nomes és modifiquen
+            
             for(int y=0;y<5;y++){
                 _regions[2][y].tipusRegio("C");
-                _regions[2][y].tipusRegio("C");
-           
+                _regions[y][2].tipusRegio("C");
             }
         
-            _regions[2][2].tipusRegio("X");
-                
+            _regions[2][2].tipusRegio("X");       
         }
+        
         else if(_tipus.equals("CVFCC")){
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
                     Regio r= new Regio();
                     r.tipusRegio("F");
                     _regions[i][j]=r;
-                    
                 }
             }
-            
-            
             for(int y=0;y<4;y++){
                 _regions[0][y].tipusRegio("V");
             }
@@ -105,13 +99,28 @@ public class Rajola {
             }
             
             _regions[0][0].dividir_cela_regio();
+            _regions[0][4].dividir_cela_regio();     
+        }
+        
+        else if(_tipus.equals("FVVFF")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;
+                }
+            }
+            for(int y=0;y<4;y++){
+                _regions[0][y].tipusRegio("V");
+                _regions[y][4].tipusRegio("V");
+            }
+            _regions[0][0].dividir_cela_regio();
             _regions[0][4].dividir_cela_regio();
-            
-            
+            _regions[4][4].dividir_cela_regio(); 
             
         }
+        
         else if(_tipus.equals("XVCCC")){
-            
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
                     Regio r= new Regio();
@@ -134,11 +143,248 @@ public class Rajola {
             
             _regions[0][0].dividir_cela_regio();
             _regions[0][4].dividir_cela_regio();
+            _regions[2][2].tipusRegio("X");
+        }
+        
+         else if (_tipus.equals("CVCCF")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;  
+                }
+            }
             
+            for(int y=0;y<5;y++){
+                _regions[0][y].tipusRegio("V");
+            }
+            
+            for(int p=2;p<5;p++){
+                _regions[2][p].tipusRegio("C");
+                _regions[p][2].tipusRegio("C");
+            }
+            
+            _regions[0][0].dividir_cela_regio();
+            _regions[0][4].dividir_cela_regio();
+            
+        }
+         
+         else if(_tipus.equals("VFEFV")){ //S'ha de descomentar l'escut
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("V");
+                    _regions[i][j]=r;   
+                }
+            }
+            
+            for(int y=0;y<5;y++){
+                _regions[0][y].tipusRegio("F");
+                _regions[4][y].tipusRegio("F"); 
+            }
+            
+            _regions[0][0].dividir_cela_regio();
+            _regions[0][4].dividir_cela_regio();
+            _regions[4][0].dividir_cela_regio();
+            _regions[4][4].dividir_cela_regio();
+            
+           // _regions[2][2].tipusRegio("E");  
+           
+           _regions[2][4].posar_bonificacio();
+          
+        }
+         
+        else if(_tipus.equals("VVVCV")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("V");
+                    _regions[i][j]=r;   
+                }
+            }
+            for(int y=0;y<5;y++){
+                _regions[4][y].tipusRegio("F");
+            }
+            _regions[4][2].tipusRegio("C");
+            _regions[4][0].dividir_cela_regio();
+            _regions[4][4].dividir_cela_regio();
+        }
+        else if(_tipus.equals("VVFVF")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("V");
+                    _regions[i][j]=r;   
+                }
+            }
+            
+            for(int y=0;y<5;y++){
+                _regions[y][0].tipusRegio("F");
+                _regions[y][4].tipusRegio("F"); 
+            }
+            
+            _regions[0][0].dividir_cela_regio();
+            _regions[0][4].dividir_cela_regio();
+            _regions[4][0].dividir_cela_regio();
+            _regions[4][4].dividir_cela_regio();
             
         }
         
-               
+        else if(_tipus.equals("XFCCC")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;
+                    
+                }
+            }
+            
+            for(int y=0;y<5;y++){
+                _regions[2][y].tipusRegio("C");
+            }
+            _regions[3][2].tipusRegio("C");
+            _regions[4][2].tipusRegio("C");
+            _regions[2][2].tipusRegio("X");
+            _regions[4][4].posar_bonificacio();
+        }
+
+        else if(_tipus.equals("VVVFV")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("V");
+                    _regions[i][j]=r;   
+                }
+            }
+            for(int y=0;y<5;y++){
+                _regions[4][y].tipusRegio("F");
+            }
+            _regions[4][0].dividir_cela_regio();
+            _regions[4][4].dividir_cela_regio();
+        }
+        
+        else if(_tipus.equals("FVFFF")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;   
+                }
+            }
+            
+            for(int y=0;y<5;y++){
+                _regions[0][y].tipusRegio("V");
+            }
+            _regions[0][0].dividir_cela_regio();
+            _regions[0][4].dividir_cela_regio();
+            _regions[4][4].posar_bonificacio();
+             
+        }
+        else if(_tipus.equals("VVCCV")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;      
+                }
+            }
+            
+            for(int y=0;y<5;y++){
+                _regions[y][0].tipusRegio("V");
+                _regions[0][y].tipusRegio("V");
+            }
+            
+            for(int z=2;z<5;z++){
+                _regions[z][0].tipusRegio("V");
+                _regions[0][z].tipusRegio("V");
+            }
+            
+            _regions[4][0].dividir_cela_regio();
+            _regions[1][4].dividir_cela_regio();
+            
+        }
+        
+        else if(_tipus.equals("VVFFV")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;          
+                }
+            }
+            for(int y=0;y<5;y++){
+                _regions[0][y].tipusRegio("V");
+                _regions[y][0].tipusRegio("V");
+            }
+            
+            
+            _regions[4][0].dividir_cela_regio();
+            _regions[4][0].dividir_cela_regio();
+ 
+        }
+        
+        else if(_tipus.equals("CCFCF")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;
+                    
+                }
+            }
+            for(int y=0;y<5;y++){
+                _regions[y][2].tipusRegio("C");
+            }
+            _regions[4][4].posar_bonificacio();
+        }
+        
+        else if(_tipus.equals("CCFCC")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;
+                    
+                }
+            }
+            for(int y=2;y<5;y++){
+                _regions[y][2].tipusRegio("C");
+            }
+            for(int y=0;y<3;y++){
+                _regions[2][y].tipusRegio("C");
+            }
+            _regions[4][4].posar_bonificacio();
+        }
+        
+        else if(_tipus.equals("FVFVF")){
+            for(int i=0;i<5;i++){
+                for(int j=0;j<5;j++){
+                    
+                    Regio r= new Regio();
+                    r.tipusRegio("F");
+                    _regions[i][j]=r;
+                    
+                }
+            }
+            for(int y=0;y<5;y++){
+                _regions[0][y].tipusRegio("V");
+                _regions[4][y].tipusRegio("V");
+            }
+            _regions[0][0].dividir_cela_regio();
+            _regions[0][4].dividir_cela_regio();
+            _regions[4][0].dividir_cela_regio();
+            _regions[4][4].dividir_cela_regio();
+            
+        }
         
         else if(_tipus.equals("MFFFF")){
             for(int i=0;i<5;i++){
@@ -150,35 +396,14 @@ public class Rajola {
                     
                 }
             }
-            //aqui ja no cal anar creant les regions perque ja estan creades, nomes és modifiquen
             for(int y=1;y<4;y++){
                 _regions[2][y].tipusRegio("M");
                 _regions[2][y].tipusRegio("M");
             }
-            
-            
+  
         }
-        else if(_tipus.equals("VVFFV")){
-            for(int i=0;i<5;i++){
-                for(int j=0;j<5;j++){
-                    Regio r= new Regio();
-                    r.tipusRegio("F");
-                    _regions[i][j]=r;          
-                }
-            }
-            //aqui ja no cal anar creant les regions perque ja estan creades, nomes és modifiquen
-            for(int y=0;y<5;y++){
-                _regions[0][y].tipusRegio("V");
-                _regions[y][0].tipusRegio("V");
-            }
-            
-            
-            _regions[4][0].dividir_cela_regio();
-            _regions[1][4].dividir_cela_regio();
-            
-            
-            
-        }
+        
+ 
         else if(_tipus.equals("MFFCF")){
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
@@ -197,28 +422,7 @@ public class Rajola {
             
         }
         
-        else if(_tipus.equals("VVCCV")){
-            for(int i=0;i<5;i++){
-                for(int j=0;j<5;j++){
-                    Regio r= new Regio();
-                    r.tipusRegio("F");
-                    _regions[i][j]=r;      
-                }
-            }
-            for(int y=0;y<5;y++){
-                _regions[y][0].tipusRegio("V");
-                _regions[0][y].tipusRegio("V");
-            }
-            
-            for(int z=2;z<5;z++){
-                _regions[z][0].tipusRegio("V");
-                _regions[0][z].tipusRegio("V");
-            }
-            
-            _regions[4][0].dividir_cela_regio();
-            _regions[1][4].dividir_cela_regio();
-            
-        }
+        
         
         
     }
