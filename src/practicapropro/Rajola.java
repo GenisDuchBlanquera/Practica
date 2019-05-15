@@ -60,6 +60,11 @@ public class Rajola {
             _regions[4][0].dividir_cela_regio();
             _regions[4][4].dividir_cela_regio();
             
+            _regions[0][2].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            _regions[3][2].afegirSeguidor();
+            _regions[4][2].afegirSeguidor();
+            
         }
         
         else if(_tipus.equals("XCCCC")){
@@ -76,7 +81,18 @@ public class Rajola {
                 _regions[y][2].tipusRegio("C");
             }
         
-            _regions[2][2].tipusRegio("X");       
+            _regions[2][2].tipusRegio("X");
+            
+            _regions[0][0].afegirSeguidor();
+            _regions[0][4].afegirSeguidor();
+            _regions[4][0].afegirSeguidor();
+            _regions[4][4].afegirSeguidor();
+            
+            _regions[0][2].afegirSeguidor();
+            _regions[2][0].afegirSeguidor();
+            _regions[2][4].afegirSeguidor();
+            _regions[4][2].afegirSeguidor();
+             
         }
         
         else if(_tipus.equals("CVFCC")){
@@ -99,7 +115,12 @@ public class Rajola {
             }
             
             _regions[0][0].dividir_cela_regio();
-            _regions[0][4].dividir_cela_regio();     
+            _regions[0][4].dividir_cela_regio();    
+            
+            _regions[0][2].afegirSeguidor();
+            _regions[2][4].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            _regions[4][0].afegirSeguidor();
         }
         
         else if(_tipus.equals("FVVFF")){
@@ -117,6 +138,12 @@ public class Rajola {
             _regions[0][0].dividir_cela_regio();
             _regions[0][4].dividir_cela_regio();
             _regions[4][4].dividir_cela_regio(); 
+            
+            _regions[0][2].afegirSeguidor();
+            _regions[2][4].afegirSeguidor();
+            _regions[3][1].afegirSeguidor();
+            
+            
             
         }
         
@@ -144,6 +171,16 @@ public class Rajola {
             _regions[0][0].dividir_cela_regio();
             _regions[0][4].dividir_cela_regio();
             _regions[2][2].tipusRegio("X");
+            
+            _regions[0][2].afegirSeguidor();
+            _regions[1][2].afegirSeguidor();
+            _regions[2][0].afegirSeguidor();
+            _regions[2][4].afegirSeguidor();
+            _regions[4][0].afegirSeguidor();
+            _regions[4][2].afegirSeguidor();
+            _regions[4][4].afegirSeguidor();
+            
+            
         }
         
          else if (_tipus.equals("CVCCF")){
@@ -167,6 +204,11 @@ public class Rajola {
             
             _regions[0][0].dividir_cela_regio();
             _regions[0][4].dividir_cela_regio();
+            
+            _regions[0][2].afegirSeguidor();
+            _regions[2][0].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            _regions[4][4].afegirSeguidor();
             
         }
          
@@ -192,6 +234,10 @@ public class Rajola {
             
            // _regions[2][2].tipusRegio("E");  
            
+           _regions[0][2].afegirSeguidor();
+           _regions[2][1].afegirSeguidor();
+           _regions[4][2].afegirSeguidor();
+           
            _regions[2][4].posar_bonificacio();
           
         }
@@ -211,6 +257,12 @@ public class Rajola {
             _regions[4][2].tipusRegio("C");
             _regions[4][0].dividir_cela_regio();
             _regions[4][4].dividir_cela_regio();
+            
+            _regions[1][2].afegirSeguidor();
+            _regions[4][1].afegirSeguidor();
+            _regions[4][2].afegirSeguidor();
+            _regions[4][3].afegirSeguidor();
+            
         }
         else if(_tipus.equals("VVFVF")){
             for(int i=0;i<5;i++){
@@ -232,6 +284,10 @@ public class Rajola {
             _regions[4][0].dividir_cela_regio();
             _regions[4][4].dividir_cela_regio();
             
+            _regions[2][2].afegirSeguidor();
+            _regions[2][0].afegirSeguidor();
+            _regions[2][4].afegirSeguidor();
+            
         }
         
         else if(_tipus.equals("XFCCC")){
@@ -250,6 +306,14 @@ public class Rajola {
             _regions[3][2].tipusRegio("C");
             _regions[4][2].tipusRegio("C");
             _regions[2][2].tipusRegio("X");
+            
+            _regions[0][2].afegirSeguidor();
+            _regions[2][0].afegirSeguidor();
+            _regions[2][4].afegirSeguidor();
+            _regions[4][0].afegirSeguidor();
+            _regions[4][2].afegirSeguidor();
+            _regions[4][4].afegirSeguidor();
+            
             _regions[4][4].posar_bonificacio();
         }
 
@@ -284,6 +348,10 @@ public class Rajola {
             }
             _regions[0][0].dividir_cela_regio();
             _regions[0][4].dividir_cela_regio();
+            
+            _regions[0][2].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            
             _regions[4][4].posar_bonificacio();
              
         }
@@ -309,6 +377,12 @@ public class Rajola {
             _regions[4][0].dividir_cela_regio();
             _regions[1][4].dividir_cela_regio();
             
+            _regions[0][0].afegirSeguidor();
+            _regions[1][1].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            _regions[4][4].afegirSeguidor();
+            
+            
         }
         
         else if(_tipus.equals("VVFFV")){
@@ -327,6 +401,9 @@ public class Rajola {
             
             _regions[4][0].dividir_cela_regio();
             _regions[4][0].dividir_cela_regio();
+            
+            _regions[0][0].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
  
         }
         
@@ -343,10 +420,15 @@ public class Rajola {
             for(int y=0;y<5;y++){
                 _regions[y][2].tipusRegio("C");
             }
+            
+            _regions[2][0].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            _regions[2][4].afegirSeguidor();
+            
             _regions[4][4].posar_bonificacio();
         }
         
-        else if(_tipus.equals("CCFCC")){
+        else if(_tipus.equals("CFFCC")){
             for(int i=0;i<5;i++){
                 for(int j=0;j<5;j++){
                     
@@ -362,6 +444,10 @@ public class Rajola {
             for(int y=0;y<3;y++){
                 _regions[2][y].tipusRegio("C");
             }
+            _regions[4][0].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            _regions[4][0].afegirSeguidor();
+            
             _regions[4][4].posar_bonificacio();
         }
         
@@ -384,6 +470,10 @@ public class Rajola {
             _regions[4][0].dividir_cela_regio();
             _regions[4][4].dividir_cela_regio();
             
+            _regions[0][2].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            _regions[4][2].afegirSeguidor();
+            
         }
         
         else if(_tipus.equals("MFFFF")){
@@ -400,7 +490,9 @@ public class Rajola {
                 _regions[2][y].tipusRegio("M");
                 _regions[2][y].tipusRegio("M");
             }
-  
+            
+            _regions[0][2].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
         }
         
  
@@ -420,6 +512,10 @@ public class Rajola {
             
             _regions[4][2].tipusRegio("C");
             
+            _regions[0][2].afegirSeguidor();
+            _regions[2][2].afegirSeguidor();
+            _regions[4][2].afegirSeguidor();
+            
         }
         
         
@@ -428,7 +524,7 @@ public class Rajola {
     }
 
 
-   public void girar(){
+  public void girar(){
 
 
    String _aux[][]=new String[5][5];
@@ -440,13 +536,21 @@ public class Rajola {
        }
    }
 
-   for (int p=0;p<5;p++){
-       _regions[4][p].tipusRegio(_aux[0][p]);
-       _regions[3][p].tipusRegio(_aux[1][p]);
-       _regions[2][p].tipusRegio(_aux[2][p]);
-       _regions[1][p].tipusRegio(_aux[3][p]);
-       _regions[0][p].tipusRegio(_aux[4][p]);
-   }
+   // Traverse each cycle 
+    for (int i = 0; i < 5 / 2; i++) 
+    { 
+        for (int j = i; j < 5 - i - 1; j++) 
+        { 
+
+            // Swap elements of each cycle 
+            // in clockwise direction 
+            Regio temp = _regions[i][j]; 
+            _regions[i][j] = _regions[5 - 1 - j][i]; 
+            _regions[5 - 1 - j][i] = _regions[5 - 1 - i][5 - 1 - j]; 
+            _regions[5 - 1 - i][5 - 1 - j] = _regions[j][5 - 1 - i]; 
+            _regions[j][5 - 1 - i] = temp; 
+        } 
+    }
 
 }
 
