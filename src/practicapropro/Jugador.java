@@ -41,9 +41,5 @@ public interface Jugador {
     void numJugador(int n);
     
     void mostrar();
-    
-    Posicio triarPosicioRajola();
-    String triarRegio();
-    Boolean GirarRajola();
 
 }

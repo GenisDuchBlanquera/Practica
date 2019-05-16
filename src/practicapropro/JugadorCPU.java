@@ -5,26 +5,15 @@
  */
 package practicapropro;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author genis
  */
-public class JugadorCPU implements Jugador {
-
-    private int nJugador;
-    private String color;
-    private Rajola r;
-    private Posicio p;
-    private Regio re;
-    private int punts;
-    private int nSeguidors;
-
-    JugadorCPU(String c, int n) {
-        assignarColor(c);
-        numJugador(n);
-    }
-
+public class JugadorCPU extends Jugador{
     
+
     
     @Override
     public Posicio colocarRajola() {
@@ -71,18 +60,39 @@ public class JugadorCPU implements Jugador {
         System.out.println("Soc el jugador CPU num " + nJugador + " amb color " + color);
     }
 
-    @Override
-    public Posicio triarPosicioRajola() {
+
+    public Posicio triarPosicioRajola(Tauler t) {
         
+        int puntsMax = 0;
+        Rajola aux = r;
+        Posicio auxP = new Posicio();
+        ArrayList<Posicio> posicionsPossibles = t.getPosicionsPossibles();
+        for (int i = 0; i < posicionsPossibles.size(); i++){
+            for (int j = 0; j < 4; j++){
+            if (t.esFactible(posicionsPossibles.get(i))){
+                if (!t.teSeguidor(posicionsPossibles.get(i))){
+                    if(puntsMax == 0 || puntsMax < t.punts(posicionsPossibles.get(i))){
+                        puntsMax = t.punts(posicionsPossibles.get(i);
+                        aux = r;
+                        auxP = posicionsPossibles.get(i);
+                    }
+                }
+                    
+            }
+           }
+        }
+        
+        return auxP;
     }
 
-    @Override
-    public String triarRegio() {
-       
+    public String triarRegio(Tauler t) {
+        int maxPunts = 0;
+       for (int i = 0; i < 25 ; i++){
+           
+       }
     }
 
-    @Override
-    public Boolean GirarRajola() {
-        
+    public int GirarRajola(int n) {
+        return n;
     }
 }
