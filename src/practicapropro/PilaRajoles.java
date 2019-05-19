@@ -6,6 +6,7 @@
 package practicapropro;
 import java.util.LinkedList;
 import java.util.Random;
+import java.util.Iterator;
 
 
 /**
@@ -49,5 +50,47 @@ public class PilaRajoles {
         
     }
     
+      public Rajola primeraRajola(String t){
+        
+        Rajola r = new Rajola();
+    
+        Iterator<Rajola> it= cua.iterator();
+        
+        int pos=-1;
+        boolean trobada=false;
+    
+        while(it.hasNext()&& !trobada){
+          
+              r=it.next();
+              pos++;
+              if(r.obtTipus().equals(t)){
+                  trobada=true;
+                 
+              }
+
+        }
+        System.out.println("POSICIIOO "+ pos);
+        cua.remove(pos);
+        return r;
+       
+    }
+    
+    
+    
+      public void mostrarrajoles(){
+        Rajola r = new Rajola();
+    
+        Iterator<Rajola> it= cua.iterator();
+      
+        
+        while(it.hasNext()){
+            r=it.next();
+            System.out.println(r.obtTipus());
+            
+            
+        }
+        
+    
+    }
         
 }
