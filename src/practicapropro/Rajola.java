@@ -559,5 +559,11 @@ public class Rajola {
 
    }
    
+   public String obtTipus(){
+       
+       return _tipus;
+       
+   }
+   
    
  }

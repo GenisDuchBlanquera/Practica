@@ -6,5 +6,9 @@ XCCCC 4
 MFFFF 2 
 VVFFV 6 
 MFFCF 2 
+#
+rajola_inicial XCCCC
+camperols sí
+
 
 

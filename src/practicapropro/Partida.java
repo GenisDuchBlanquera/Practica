@@ -24,6 +24,7 @@ public class Partida {
     ArrayList<JugadorCPU> jugadorsCpu = new ArrayList<JugadorCPU>();
     ArrayList<Integer> posicioCPU = new ArrayList<Integer>();
     Tauler t;
+    boolean camperols;
 
     void iniciarPartida() throws FileNotFoundException {
 
@@ -39,30 +40,56 @@ public class Partida {
         System.out.println("Nombre jugadors " + numJugadors);
         //llegir jugadors cpu
         s.next();
-        int p = s.nextInt();
-        posicioCPU.add(p);
-        p = s.nextInt();
-        posicioCPU.add(p);
-        p = s.nextInt();
-        posicioCPU.add(p);
+        
+        while(s.hasNextInt()){
+            int p = s.nextInt();
+            posicioCPU.add(p);
+        }
+        
         System.out.println("JugadorsCPU " + posicioCPU.get(0) + " " + posicioCPU.get(1) + " " + posicioCPU.get(2));
         //llegir paraula rajoles
         s.next();
-        while (s.hasNext()) {
+        
+       boolean acabarrajoles=false;
+        while (s.hasNext() && !acabarrajoles) {
             String tipus = s.next();
-            Rajola j = new Rajola(tipus);
-            int n = s.nextInt();
-            System.out.println(tipus + " " + n);
-            int aux = 0;
-            while (aux < n) {
+            if(tipus.equals("#"))
+                acabarrajoles=true;
+            
+            else{
+                Rajola j = new Rajola(tipus);
+                int n = s.nextInt();
+                System.out.println(tipus + " " + n);
+                int aux = 0;
+                while (aux < n) {
 
-                pr.afegir(j);
-                aux++;
+                    pr.afegir(j);
+                    aux++;
 
+                }
             }
-
         }
-        System.out.println(pr.mida());
+        System.out.println("Mida cua rajoles "+ pr.mida());
+        s.next();
+        String primerafitxa=s.next();
+      
+
+        Rajola raj=pr.primeraRajola(primerafitxa);       
+        System.out.println("Primeraaaaa fitxa "+ raj.obtTipus());
+        
+        pr.mostrarrajoles();
+        
+        
+        s.next();
+        
+        
+        String cam=s.next();
+        if(cam.equals("sí"))
+            camperols=true;
+        else
+            camperols=false;
+        
+        System.out.println("Camperols "+ camperols);
 
     }
 
