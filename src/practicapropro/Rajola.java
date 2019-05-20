@@ -9,9 +9,14 @@ package practicapropro;
 public class Rajola {
 
 
-    private Regio _regions[][] = new Regio[5][5];
-    private String _tipus;
+    private Regio _regions[][] = new Regio[5][5]; /*!< Matriu de 5x5 que conte les regions de cada rajola  */
+    private String _tipus; /*!< String que conte el tipus de rajola  */
 
+    
+    /** @pre: --
+        @post: Constructor de rajola sense regions i _tipus buit
+    */
+    
     public Rajola() {
 
 
@@ -26,7 +31,9 @@ public class Rajola {
         }
 
     }
-
+    /** @pre: --
+        @post: Constructor de rajola amb regions i amb _tipus
+    */
     public Rajola (String t) {
 
 
@@ -522,8 +529,9 @@ public class Rajola {
         
         
     }
-
-
+    /** @pre: --
+        @post: Gira la rajola 90 graus
+    */
   public void girar(){
 
 
@@ -553,17 +561,45 @@ public class Rajola {
     }
 
 }
-
+    /** @pre: --
+        @post: Dona la possibilitat de posar-hi un seguidor a una regio de la rajola
+    */
    public void afegirSeguidor(int x, int y){
        _regions[x][y].afegirSeguidor();
 
    }
-   
-   public String obtTipus(){
+    /** @pre: --
+        @post: Retorna String _tipus 
+    */
+   public String tipus(){
        
        return _tipus;
        
    }
+    /** @pre: --
+        @post: Iguala la rajola amb els mateixos valors que la rajola entrada per parametre 
+    */
+   public void copia(Rajola r) {
+
+        _tipus = r.tipus();
+
+        for (int x = 0; x < 5; x++) {
+            for (int y = 0; y < 5; y++) {
+                _regions[x][y].igualar(r.reg(x, y));
+            }
+        }
+
+    }
+   
+    /** @pre: --
+        @post: Retorna la regio que hi ha una posicio de la rajola
+    */
+   
+   public Regio reg(int x, int y) {
+
+        return _regions[x][y];
+
+    }
    
    
  }
