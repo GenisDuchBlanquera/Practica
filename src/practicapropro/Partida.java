@@ -16,16 +16,21 @@ import java.util.*;
  */
 public class Partida {
 
-    int numJugadors;
-    int tornJugador;
-    PilaRajoles pr;
-    Rajola rajola;
-    ArrayList<JugadorHuma> llistaJugadorsHuma = new ArrayList<JugadorHuma>();
-    ArrayList<JugadorCPU> jugadorsCpu = new ArrayList<JugadorCPU>();
-    ArrayList<Integer> posicioCPU = new ArrayList<Integer>();
-    Tauler t;
-    boolean camperols;
-
+    int numJugadors; /*!< Enter que indica en nombre de jugadors que jugaran a la partida */
+    int tornJugador; /*!< Enter que indica el nombre de torn que s'esta jugant */
+    PilaRajoles pr; /*!< Delclaracio d'una pila de rajoles d'on s'aniran agafant per jugar la partida  */
+    Rajola rajola; /*!< Declaracio d'un rajola  */
+    Rajola primera_rajola; /*!< Declaracio de la primra rajola  */
+    ArrayList<JugadorHuma> llistaJugadorsHuma = new ArrayList<JugadorHuma>(); /*!< Arraylist on s'hi guardara els jugadors que seran humans */
+    ArrayList<JugadorCPU> jugadorsCpu = new ArrayList<JugadorCPU>(); /*!< Arraylist on s'hi guardara els jugadors que seran cpu */
+    ArrayList<Integer> posicioCPU = new ArrayList<Integer>(); /*!< Arraylist on s'hi guardara la poscio dels jugadors que seran cpu */
+    Tauler t; /*!< Declaracio d'un taulell per jugar */
+    boolean camperols; /*!< Bolea que indicara si a la partida hi ha camperols o no */
+    
+    /** @pre: --
+        @post: Constructor que inicia la partida llegint de fitxer la quantitar de jugadors, quins son humans i quins cpu, 
+        * quines rajoles hi haurà i en quina quantitat i guarda la rajola inicial de la partida
+    */ 
     void iniciarPartida() throws FileNotFoundException {
 
         System.out.println("Benvingut al joc del Carcassone");
@@ -75,10 +80,12 @@ public class Partida {
       
 
         Rajola raj=pr.primeraRajola(primerafitxa);       
-        System.out.println("Primeraaaaa fitxa "+ raj.obtTipus());
+        Rajola primera=new Rajola();
+        primera.copia(raj);
+        System.out.println("Primeraaaaa fitxa "+ primera.tipus());
         
-        pr.mostrarrajoles();
-        
+        //pr.mostrarrajoles();
+         
         
         s.next();
         
